@@ -1,0 +1,19 @@
+		<?php	
+		$this->Widget->clear();
+		$this->Widget->setWidgetButton("arrow");
+		$this->Widget->create($this->_("StaffNotesPlugin.notes.heading_notes", true), array('id'=>"widget_staff_notes_admin_main", $this->Html->ifSet($render_section, null)));
+		$this->Form->create();
+		$this->Form->fieldHidden("empty", "0");		
+		?>
+		<div class="inner">
+			<div class="pad">
+				<?php $this->Form->fieldTextarea("notes", $this->Html->ifSet($vars->notes), array("id"=>"notes")); ?> 
+				
+				<div class="button_row"><a class="btn_right submit" href="#"><?php $this->_("StaffNotesPlugin.notes.field_notessubmit");?></a></div>
+			</div>			
+		</div>
+		
+		<?php	
+		$this->Form->end();		
+		$this->Widget->end();
+		?>
